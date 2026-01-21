@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color:rgb(255, 239, 209);
+        }
+
+        *{
+            text-align: center;
+        }
+
+        h1
+        {
+            color:rgb(130, 160, 162);
+        }
+
+        h3
+        {
+            color:rgb(86, 115, 117);
+        }
+
+        div.Q {
+            border-style:solid;
+            border-radius: 30px;
+            padding:15px;
+            padding-top: 3px;
+            margin:20px;
+            background-color: rgb(255, 223, 214);
+            border-color: rgb(250, 197, 183); ;
+        }
+
+        button {
+            width: 150px;
+            font-size: 17px;
+            border-radius: 30px;
+            background-color: rgb(130, 160, 162);
+            padding: 12px;
+            color:floralwhite;
+            border-style: none;
+            
+        }
+
+        #result {
+            padding: 20px;
+            margin-top: 10px;
+            font-size: 20px;
+            color:rgb(86, 115, 117);
+            font-weight: 700;
+            
+        }
+
+        .Q{
+            color:rgb(206, 146, 129); ;
+        }
+
+        p{
+           font-weight: 700;
+           color:rgb(194, 118, 98);
+           font-size: 20px;
+
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div>
+    <h1>⛄️겨울간식 취향 테스트⛄️</h1>
+    <h3>둘 중 하나를 골라보세요!</h3>
+
+    <div class="Q">
+
+        <p>1.겨울간식은 역시?</p>
+        <input type="radio" id="F" value="F" name="FT"> 달달한게 최고지 
+
+        <input type="radio" id="T" value="T" name="FT"> 클래식하게 담백한게 최고야
+
+
+    </div>
+
+    <div class="Q">
+
+        <p>2.간식먹는 장소는?</p>
+        <input type="radio" id="J" value="J" name="JP">밖에서 호호 불어먹는다
+
+        <input type="radio" id="P" value="P" name="JP">집에서 따뜻하게 먹는다
+
+
+    </div> 
+
+    <button id="click">결과 확인하기</button>
+   
+    <div id="result">
+
+    </div>
+</div>
+
+<script>
+    function winter() {
+        let 슈크림 = document.getElementById('F').checked;
+        let 팥 = document.getElementById('T').checked;
+
+        let 붕어빵 = document.getElementById('J').checked;
+        let 호빵 = document.getElementById('P').checked;
+
+        let 결과 = document.getElementById('result');
+
+
+        if (슈크림 && 붕어빵) { 
+            결과.textContent="달달한 겨울 간식인 '슈크림 붕어빵'을 좋아하시는군요🤤";
+        }
+
+        else if (팥 && 호빵) {
+            결과.textContent=" 호빵의 근본, '야채 호빵'을 좋아하시는군요😚";
+        }
+
+        else if (슈크림 && 호빵) {
+            결과.textContent="달달하고 든든한 '팥호빵'을 좋아하시는군요😋";
+        }
+
+        else if (팥 && 붕어빵) {
+            결과.textContent="겨울간식의 대표주자, '팥 붕어빵'을 좋아하시는군요😍";
+        }
+    }
+    click.onclick = winter;
+</script>
+
+
+</body>
+</html>
+
+
